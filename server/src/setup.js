@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const init = async function (){
     /** Concectando com a API da totalvoice */
-    await axios({
+   const ura = (await axios({
         url: 'https://api.totalvoice.com.br/ura',
         method: 'post',
         /** Criando a autenticação utilizando uma variável ambiente */
@@ -26,12 +26,14 @@ const init = async function (){
             {
                 acao: "dinamico",
                 acao_dados:{
-                    url: ''
+                    // url: 'https://82a10379757e20ead7a895b75ac84aec.m.pipedream.net'
+                    url: 'https://e21057112829eb27776c51fbcc492afd.m.pipedream.net'
                 }
             }
         ]
         }
-    });
+    })).data;
+    console.log(ura);
 };
 
 init();
